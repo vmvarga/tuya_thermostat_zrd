@@ -6,6 +6,7 @@ OUT_DIR += \
  
 OBJS += \
 $(OUT_PATH)/$(SRC_PATH)/common/main.o \
+$(OUT_PATH)/$(SRC_PATH)/common/flash.o \
 $(OUT_PATH)/$(SRC_PATH)/zcl/zcl_thermostat_ui_cfg.o \
 $(OUT_PATH)/$(SRC_PATH)/zcl/zcl_app_thermostat.o \
 $(OUT_PATH)/$(SRC_PATH)/zcl/zcl_app_fancontrol.o \
@@ -30,7 +31,6 @@ $(OUT_PATH)/$(SRC_PATH)/app_thermostat_model0c.o \
 $(OUT_PATH)/$(SRC_PATH)/app_endpoint_cfg.o \
 $(OUT_PATH)/$(SRC_PATH)/app_utility.o \
 $(OUT_PATH)/$(SRC_PATH)/app_time.o \
-$(OUT_PATH)/$(SRC_PATH)/app_bootloader.o \
 $(OUT_PATH)/$(SRC_PATH)/app_main.o \
 $(OUT_PATH)/$(SRC_PATH)/zb_appCb.o \
 $(OUT_PATH)/$(SRC_PATH)/zcl_appCb.o

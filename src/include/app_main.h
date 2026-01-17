@@ -19,7 +19,6 @@
 #include "app_uart.h"
 #include "app_thermostat.h"
 #include "app_time.h"
-#include "app_bootloader.h"
 
 
 typedef struct {

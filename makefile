@@ -43,6 +43,7 @@ INCLUDE_PATHS := \
 -I$(SDK_PATH)/platform \
 -I$(SDK_PATH)/proj/common \
 -I$(SDK_PATH)/proj \
+-I$(SDK_PATH)/platform/chip_8258 \
 -I$(SDK_PATH)/zigbee/common/includes \
 -I$(SDK_PATH)/zigbee/zbapi \
 -I$(SDK_PATH)/zigbee/bdb/includes \
@@ -131,7 +132,7 @@ LST_FILE := $(OUT_PATH)/$(PROJECT_NAME).lst
 BIN_FILE := $(OUT_PATH)/$(PROJECT_NAME).bin
 ELF_FILE := $(OUT_PATH)/$(PROJECT_NAME).elf
 FW_FILE  := $(OUT_PATH)/firmware.bin
-BOOT_FILE := $(OUT_PATH)/bootloader.bin
+#BOOT_FILE := $(OUT_PATH)/bootloader.bin
 
 SIZEDUMMY += \
 sizedummy \
@@ -199,17 +200,6 @@ $(LST_FILE): $(ELF_FILE)
 	@echo 'Finished building: $@'
 	@echo ' '
 	
-ifeq ($(CHECK_BL),1)
-$(BIN_FILE): $(ELF_FILE)
-	@echo 'Create Flash image (binary format)'
-	@$(OBJCOPY) -v -O binary $(ELF_FILE)  $(BIN_FILE)
-	@python3 $(TL_CHECK) $(BIN_FILE)
-	@echo 'Create zigbee Tuya OTA file'
-	@python3 $(MAKE_OTA_TUYA) -m 4417 -t 54179 -o $(BIN_PATH)/1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee $(BIN_FILE) $(BOOT_FILE)
-	@echo ' '
-	@echo 'Finished building: $@'
-	@echo ' '
-else
 $(BIN_FILE): $(ELF_FILE)
 	@echo 'Create Flash image (binary format)'
 	@$(OBJCOPY) -v -O binary $(ELF_FILE)  $(BIN_FILE)
@@ -218,10 +208,11 @@ $(BIN_FILE): $(ELF_FILE)
 	@cp $(BIN_FILE) $(BIN_PATH)/$(PROJECT_NAME)_$(VERSION_RELEASE).$(VERSION_BUILD).bin
 	@echo 'Create zigbee OTA file'
 	@python3 $(MAKE_OTA) -ot $(PROJECT_NAME) $(BIN_PATH)/$(PROJECT_NAME)_$(VERSION_RELEASE).$(VERSION_BUILD).bin
+	@echo 'Create zigbee Tuya OTA file'
+	@python3 $(MAKE_OTA_TUYA) -m 4417 -t 54179 -o $(BIN_PATH)/1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee $(BIN_FILE) $(BOOT_FILE)
 	@echo ' '
 	@echo 'Finished building: $@'
 	@echo ' '
-endif
 
 $(OBJ_DIR)/bin_updater.o: $(OBJ_DIR)
     @objcopy -I binary --output-target elf32-littlearm --rename-section .data=.bin_files ./updater.bin $@	 
