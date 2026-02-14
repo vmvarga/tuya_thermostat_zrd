@@ -2,36 +2,28 @@
 
 ### Custom firmware for Tuya thermostat models
 
-1. Model r01
-	- "[_TZE204_u9bfwha0](doc/thermostats/tuya_thermostat_r01/README.md)"
-	- "[_TZE204_aoclfnxz](doc/thermostats/tuya_thermostat_r01/README.md)"
-2. Model r02
-	- ["_TZE200_edl8pz1k"](doc/thermostats/tuya_thermostat_r02/README.md)
-	- ["_TZE204_edl8pz1k"](doc/thermostats/tuya_thermostat_r02/README.md)
-3. Model r03	
-	- ["_TZE204_tagezcph"](doc/thermostats/tuya_thermostat_r03/README.md)
-4. Model r04	
-	- ["_TZE204_xyugziqv"](doc/thermostats/tuya_thermostat_r04/README.md)
-5. Model r05
-	- ["_TZE204_5toc8efa"](doc/thermostats/tuya_thermostat_r05/README.md)
-6. Model r06
-	- ["_TZE204_lzriup1j"](doc/thermostats/tuya_thermostat_r06/README.md)
-	- ["_TZE204_oh8y8pv8"](doc/thermostats/tuya_thermostat_r06/README.md)
-	- ["_TZE204_gops3slb"](doc/thermostats/tuya_thermostat_r06/README.md)
-	- ["_TZE284_cvub6xbb"](doc/thermostats/tuya_thermostat_r06/README.md)
-7. Model r07
-	- ["_TZE204_mpbki2zm"](doc/thermostats/tuya_thermostat_r07/README.md)
-8. Model r08
-	- ["_TZE204_7rghpoxo"](doc/thermostats/tuya_thermostat_r08/README.md)
-	- ["_TZE200_7rghpoxo"](doc/thermostats/tuya_thermostat_r08/README.md)
-9. Model r09
-	- ["_TZE204_6a4vxfnv"](doc/thermostats/tuya_thermostat_r09/README.md)
-10. Model r0A
-	- ["_TZE284_xalsoe3m"](doc/thermostats/tuya_thermostat_r0a/README.md)
-10. Model r0B
-	- ["_TZE204_8byfmxdv"](doc/thermostats/tuya_thermostat_r0b/README.md)
-11. Model r0C
-	- ["_TZE204_szbxmorb"](doc/thermostats/tuya_thermostat_r0c/README.md)
+<!--
+| Custom Zigbee Model | Original Zigbee Manufacturer | Description       |
+|:-------------------:|:----------------------------:|:-----------------:|
+| `Tuya_Thermostat_r01` | `_TZE204_u9bfwha0`         | [:bookmark_tabs:] |
+| `Tuya_Thermostat_r02` | `_TZE200_edl8pz1k`         | [:bookmark_tabs:] |
+-->
+
+| Custom Zigbee Model | Original Zigbee Manufacturer | Description |
+|:-------------------:|:----------------------------:|:-----------:|
+| `Tuya_Thermostat_r01` | `_TZE204_u9bfwha0` `_TZE204_aoclfnxz` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r01/README.md) |
+| `Tuya_Thermostat_r02` | `_TZE200_edl8pz1k` `_TZE204_edl8pz1k` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r02/README.md) |
+| `Tuya_Thermostat_r03` | `_TZE204_tagezcph` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r03/README.md) |
+| `Tuya_Thermostat_r04` | `_TZE204_xyugziqv` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r04/README.md) |
+| `Tuya_Thermostat_r05` | `_TZE204_5toc8efa` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r05/README.md) |
+| `Tuya_Thermostat_r06` | `_TZE204_lzriup1j` `_TZE204_oh8y8pv8` `_TZE204_gops3slb` `_TZE284_cvub6xbb`| [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r06/README.md) |
+| `Tuya_Thermostat_r07` | `_TZE204_mpbki2zm` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r07/README.md) |
+| `Tuya_Thermostat_r08` | `_TZE204_7rghpoxo` `_TZE200_7rghpoxo` `_TZE200_lndsb16m` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r08/README.md) |
+| `Tuya_Thermostat_r09` | `_TZE204_6a4vxfnv` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r09/README.md) |
+| `Tuya_Thermostat_r0A` | `_TZE284_xalsoe3m` `_TZE204_xalsoe3m` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0b/README.md) |
+| `Tuya_Thermostat_r0B` | `_TZE204_8byfmxdv` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0b/README.md) |
+| `Tuya_Thermostat_r0C` | `_TZE204_szbxmorb` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0c/README.md) |
+
 
 <img src="doc/images/model1.png"/>
 <img src="doc/images/model1_2.png"/>
