@@ -5,7 +5,7 @@
 
 ### Custom firmware for Tuya thermostat models
 
-<img src="doc/images/model1.png" alt="image" width="18%" height="auto"> <img src="doc/images/model1_2.png" alt="image" width="15%" height="auto"> <img src="doc/images/model3_1.png" alt="image" width="15%" height="auto"> <img src="doc/images/model3_2.png" alt="image" width="15%" height="auto"> <img src="doc/images/model4.png" alt="image" width="13%" height="auto"> <img src="doc/images/model5.png" alt="image" width="15%" height="auto">
+<img src="doc/images/model1.png" alt="image" width="17%" height="auto"> <img src="doc/images/model1_2.png" alt="image" width="15%" height="auto"> <img src="doc/images/model3_1.png" alt="image" width="15%" height="auto"> <img src="doc/images/model3_2.png" alt="image" width="15%" height="auto"> <img src="doc/images/model4.png" alt="image" width="13%" height="auto"> <img src="doc/images/model5.png" alt="image" width="15%" height="auto">
 
 <img src="doc/images/model6.png" alt="image" width="15%" height="auto"> <img src="doc/images/model7.png" alt="image" width="15%" height="auto"> <img src="doc/images/model8.png" alt="image" width="15%" height="auto"> <img src="doc/images/model9.png" alt="image" width="15%" height="auto"> <img src="doc/images/model0b.png" alt="image" width="15%" height="auto">
 
