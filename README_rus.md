@@ -2,6 +2,12 @@
 
 ### Custom firmware for Tuya thermostat models
 
+<img src="doc/images/model1.png" alt="image" width="20%" height="auto"> <img src="doc/images/model1_2.png" alt="image" width="20%" height="auto"> <img src="doc/images/model3_1.png" alt="image" width="20%" height="auto"> <img src="doc/images/model3_2.png" alt="image" width="20%" height="auto">
+
+<img src="doc/images/model4.png" alt="image" width="20%" height="auto"> <img src="doc/images/model5.png" alt="image" width="20%" height="auto"> <img src="doc/images/model6.png" alt="image" width="20%" height="auto"> <img src="doc/images/model7.png" alt="image" width="20%" height="auto">
+
+<img src="doc/images/model8.png" alt="image" width="20%" height="auto"> <img src="doc/images/model9.png" alt="image" width="20%" height="auto"> <img src="doc/images/model0b.png" alt="image" width="20%" height="auto">
+
 <!--
 | Custom Zigbee Model | Original Zigbee Manufacturer | Description       |
 |:-------------------:|:----------------------------:|:-----------------:|
@@ -23,18 +29,6 @@
 | Tuya_Thermostat_r0A | `_TZE284_xalsoe3m` `_TZE204_xalsoe3m` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0b/README.md) |
 | Tuya_Thermostat_r0B | `_TZE204_8byfmxdv` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0b/README.md) |
 | Tuya_Thermostat_r0C | `_TZE204_szbxmorb` | [:bookmark_tabs:](doc/thermostats/tuya_thermostat_r0c/README.md) |
-
-<img src="doc/images/model1.png" alt="image" width="25%" height="auto">
-<img src="doc/images/model1_2.png"/>
-<img src="doc/images/model3_1.png"/>
-<img src="doc/images/model3_2.png"/>
-<img src="doc/images/model4.png"/>
-<img src="doc/images/model5.png"/>
-<img src="doc/images/model6.png"/>
-<img src="doc/images/model7.png"/>
-<img src="doc/images/model8.png"/>
-<img src="doc/images/model9.png"/>
-<img src="doc/images/model0b.png"/>
 
 **Автор не несет никакой ответственности, если вы, воспользовавшись этим проектом, превратите свой умный термостат в полоумный.**
 
