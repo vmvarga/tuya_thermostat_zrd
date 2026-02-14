@@ -623,7 +623,7 @@ void local_cmd_max_setpoint(void *args) {
 
     zcl_getAttrVal(APP_ENDPOINT1, ZCL_CLUSTER_HAVC_THERMOSTAT, ZCL_ATTRID_HVAC_THERMOSTAT_MAX_HEAT_SETPOINT_LIMIT, &len, (uint8_t*)&old_max);
 
-    printf("old_max: %d, temp: %d\r\n", old_max, *temp);
+//    printf("old_max: %d, temp: %d\r\n", old_max, *temp);
 
     if (old_max != *temp) {
         zcl_setAttrVal(APP_ENDPOINT1, ZCL_CLUSTER_HAVC_THERMOSTAT, ZCL_ATTRID_HVAC_THERMOSTAT_MAX_HEAT_SETPOINT_LIMIT, (uint8_t*)temp);
