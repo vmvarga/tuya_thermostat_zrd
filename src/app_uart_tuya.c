@@ -12,6 +12,8 @@ static uint16_t     seq_num = 0;
 static status_net_t status_net = STATUS_NET_UNKNOWN;
 static uint8_t      no_answer = false;
 static uint32_t     uart_timeout = TIMEOUT_10SEC;
+static bool         boot_announce_sent = false;
+static bool         manuf_name_is_set = false;
 
 static schedule_args_model2_t schedule_args;
 
@@ -334,6 +336,14 @@ void uart_cmd_handler() {
         //only for test!!!
 //        set_command(COMMANDXX, seq_num, true);
     }
+
+    if (!boot_announce_sent  && !manuf_name_is_set && zb_isDeviceJoinedNwk()) {
+//        printf("Sent announcement\r\n");
+        zb_zdoSendDevAnnance();
+        boot_announce_sent = true;
+    }
+
+
 
     current_queue = read_from_ring_cmd();
 
