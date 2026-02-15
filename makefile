@@ -2,7 +2,7 @@
 PROJECT_NAME := tuya_thermostat_zrd
 
 # Set the serial port number for downloading the firmware
-DOWNLOAD_PORT := COM3
+DOWNLOAD_PORT ?= COM3
 
 COMPILE_PREFIX = C:/TelinkSDK/opt/tc32/bin/tc32
 

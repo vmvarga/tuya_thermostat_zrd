@@ -354,6 +354,8 @@ const zclAttrInfo_t thermostat_attrTbl[] = {
         { ZCL_ATTRID_HVAC_THERMOSTAT_CUSTOM_EXT_TEMP_CALIBRATION,   ZCL_INT8,       RWR,    (uint8_t*)&g_zcl_thermostatAttrs.extTemperatureCalibration  },
         { ZCL_ATTRID_HVAC_THERMOSTAT_CUSTOM_MODE_KEYLOCK,           ZCL_BOOLEAN,    RWR,    (uint8_t*)&g_zcl_thermostatAttrs.modeKeyLock                },
         { ZCL_ATTRID_HVAC_THERMOSTAT_CUSTOM_MANUF_NAME,             ZCL_ENUM8,      RW,     (uint8_t*)&g_zcl_thermostatAttrs.manuf_name                 },
+        { ZCL_ATTRID_HVAC_THERMOSTAT_CUSTOM_SCREEN_OFF_TIME,        ZCL_ENUM8,      RW,     (uint8_t*)&g_zcl_thermostatAttrs.screen_off_time            },
+        { ZCL_ATTRID_HVAC_THERMOSTAT_CUSTOM_LED_INDICATOR,          ZCL_BOOLEAN,    RW,     (uint8_t*)&g_zcl_thermostatAttrs.led_indicator              },
 
         { ZCL_ATTRID_GLOBAL_CLUSTER_REVISION,                       ZCL_UINT16,     R,      (uint8_t*)&zcl_attr_global_clusterRevision                  },
 };

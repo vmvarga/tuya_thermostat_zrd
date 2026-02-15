@@ -119,6 +119,8 @@ typedef struct {
     uint8_t     frost_protect_onoff;            // 0 - off, 1 - on
     uint8_t     extTemperatureCalibration;      // -9°C ... +9°C
     uint8_t     manuf_name;
+    uint8_t     screen_off_time;                // 10s, 20s, 30s, ...
+    uint8_t     led_indicator;                  // 0 - off, 1 - on
 } zcl_thermostatAttr_t;
 
 /**
