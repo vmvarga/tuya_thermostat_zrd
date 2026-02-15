@@ -467,6 +467,7 @@ void remote_cmd_humidity_offset_0C(void *args);
 #define remote_cmd_set_schedule_0D      remote_cmd_set_schedule_2
 #define remote_cmd_get_schedule_0D      remote_cmd_get_schedule_2
 #define remote_cmd_eco_mode_temp_0D     remote_cmd_eco_mode_cool_temp_7
+#define remote_cmd_setting_reset_0D     remote_cmd_setting_reset_6
 
 void remote_cmd_oper_mode_0D(void *args);
 void remote_cmd_level_0D(void *args);
@@ -810,6 +811,7 @@ void local_cmd_humidity_offset_0C(void *args);
 #define local_cmd_set_schedule_0D       local_cmd_set_schedule_2
 #define local_cmd_eco_mode_0D           local_cmd_eco_mode_3
 #define local_cmd_eco_mode_temp_0D      local_cmd_eco_mode_cool_temp_7
+#define local_cmd_setting_reset_0D      local_cmd_setting_reset_6
 
 void local_cmd_oper_mode_0D(void* args);
 void local_cmd_level_0D(void* args);

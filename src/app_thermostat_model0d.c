@@ -170,6 +170,12 @@ data_point_st_t* init_datapoint_model0D() {
     data_point_model_common[DP_IDX_ECO_COOL_TEMP].arg1 = R0D_ECO_HEAT_MIN;
     data_point_model_common[DP_IDX_ECO_COOL_TEMP].arg2 = R0D_ECO_HEAT_MAX;
 
+    data_point_model_common[DP_IDX_SETTINGS_RESET].id = DP_TYPE0D_ID_1C;
+    data_point_model_common[DP_IDX_SETTINGS_RESET].type = DP_BOOL;
+    data_point_model_common[DP_IDX_SETTINGS_RESET].len = 1;
+    data_point_model_common[DP_IDX_SETTINGS_RESET].remote_cmd = remote_cmd_setting_reset_0D;
+    data_point_model_common[DP_IDX_SETTINGS_RESET].local_cmd = local_cmd_setting_reset_0D;
+
     return data_point_model_common;
 }
 
