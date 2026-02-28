@@ -504,6 +504,7 @@ static void print_setting_sr(nv_sts_t st, thermostat_settings_t *thermostat_sett
             case MANUF_NAME_7:
             case MANUF_NAME_9:
             case MANUF_NAME_0C:
+            case MANUF_NAME_0D:
                 for(i = 0; i < 4; i++) {
                     printf("schedule_mon[%d]. transTime: 0x%x, heatSetpoint: 0x%x\r\n", i,
                             thermostat_settings->schedule_data.schedule_mon[i].transTime,
