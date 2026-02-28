@@ -10,11 +10,11 @@ void start_message() {
 
 #ifdef ZCL_OTA
 #if UART_PRINTF_MODE
-        printf("OTA mode enabled. MCU boot from address: 0x%x\r\n", mcuBootAddrGet());
+        printf("OTA mode enabled. MCU boot from address: 0x%x\r\n", BOOT_LOADER_MODE?0x8000:mcuBootAddrGet());
 #endif /* UART_PRINTF_MODE */
 #else
 #if UART_PRINTF_MODE
-    printf("OTA mode desabled. MCU boot from address: 0x%x\r\n", mcuBootAddrGet());
+    printf("OTA mode desabled. MCU boot from address: 0x%x\r\n", BOOT_LOADER_MODE?0x8000:mcuBootAddrGet());
 #endif /* UART_PRINTF_MODE */
 #endif
 
