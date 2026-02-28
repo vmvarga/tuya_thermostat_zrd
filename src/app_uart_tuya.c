@@ -340,7 +340,7 @@ void uart_cmd_handler() {
     if (current_queue) {
 
         /* except "aoclfnxz" and "edl8pz1k" */
-        if (strcmp(signature, tuya_manuf_names[1][0]) && strcmp(signature, tuya_manuf_names[0][1])) {
+        if (strcmp(signature, tuya_manuf_names[MANUF_NAME_2][0]) && strcmp(signature, tuya_manuf_names[MANUF_NAME_1][1])) {
             if (!clock_time_exceed(answer_period, TIMEOUT_TICK_50MS)) {
                 return;
             }
@@ -418,8 +418,8 @@ void uart_cmd_handler() {
                                 data_point->dp_id == data_point_model[DP_IDX_FAN_MODE].id ||
                                 data_point->dp_id == data_point_model[DP_IDX_FAN_CONTROL].id ||
                                 data_point->dp_id == data_point_model[DP_IDX_SCHEDULE].id) {
-                                if (strcmp(tuya_manuf_names[MANUF_NAME_6][1], signature) ||
-                                        strcmp(tuya_manuf_names[MANUF_NAME_6][3], signature)) {
+                                if (strcmp(tuya_manuf_names[MANUF_NAME_6][1], signature) == 0 ||
+                                        strcmp(tuya_manuf_names[MANUF_NAME_6][3], signature) == 0) {
                                     set_default_answer(COMMAND05, reverse16(pkt->seq_num));
                                 } else {
                                     set_default_answer(COMMAND06, reverse16(pkt->seq_num));
@@ -553,8 +553,10 @@ void uart_cmd_handler() {
                                         case MANUF_NAME_8:
                                             data_point_model = init_datapoint_model8();
                                             uart_timeout = TIMEOUT_15SEC;
+                                            set_command(COMMAND28, seq_num, true);
                                             zb_modelId[18] = '0';
                                             zb_modelId[19] = '8';
+                                            check_schedule8TimerEvt = TL_ZB_TIMER_SCHEDULE(check_schedule8Cb, NULL, TIMEOUT_650MS);
                                             break;
                                         case MANUF_NAME_9:
                                             data_point_model = init_datapoint_model9();

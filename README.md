@@ -56,9 +56,9 @@ Only the thermostats listed above were checked. If you have a different signatur
 
 **`A4 C1 38`**
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/device_ieee.jpg"/>
+<img src="doc/images/device_ieee.jpg"/>
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/about_ieee.jpg"/>
+<img src="doc/images/about_ieee.jpg"/>
 
 **If the IEEE start is different from the specified one, then the thermostat has a different chip in the Zigbee module, you can't use this project.**
 
@@ -71,24 +71,24 @@ To keep it from spamming the network. The first instance (see above) sent 25 pac
 ## Result. 
 
 **About**
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_about.jpg"/>
+<img src="doc/images/z2m_about.jpg"/>
 
 **Exposes**
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_exposes.jpg"/>
+<img src="doc/images/z2m_exposes.jpg"/>
 
 **Reporting**
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_reporting.jpg"/>
+<img src="doc/images/z2m_reporting.jpg"/>
 
 
 ## How to update.
 
-First, add external [converter](https://github.com/slacky1965/tuya_thermostat_zrd/tree/main/zigbee2mqtt/convertors) `tuya_thermostat_orig.js` to z2m. He activates OTA in z2m for thermostat with Tuya firmware. Put the converter in the directory ` external_converters` , which should be created in the root of z2m.
+First, add external [converter](zigbee2mqtt/convertors) `tuya_thermostat_orig.js` to z2m. He activates OTA in z2m for thermostat with Tuya firmware. Put the converter in the directory ` external_converters` , which should be created in the root of z2m.
 
 Next, you need to add a local update repository. 
 
-Create a directory` images` in the z2m directory and put the file [1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee](https://github.com/slacky1965/tuya_thermostat_zrd/raw/refs/heads/main/bin/1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee) there.
+Create a directory` images` in the z2m directory and put the file [1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee](bin/1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee) there.
 
-Copy the file [local_ota_index.json](https://github.com/slacky1965/tuya_thermostat_zrd/raw/refs/heads/main/zigbee2mqtt/local_ota_index.json) to the z2m directory.
+Copy the file [local_ota_index.json](zigbee2mqtt/local_ota_index.json) to the z2m directory.
 
 And add local storage to the z2m config (configuration.yaml)
 
@@ -99,16 +99,16 @@ ota:
 
 Then reboot z2m and see a new device (if the thermostat was already in the network and visible in z2m).
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_1.jpg"/>
+<img src="doc/images/z2m_tuya_1.jpg"/>
 
 Then go to the OTA section. And see your device there. Click check for updates.
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_1.jpg"/>
+<img src="doc/images/z2m_tuya_update_1.jpg"/>
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_2.jpg"/>
+<img src="doc/images/z2m_tuya_update_2.jpg"/>
 
 Hit the red button. And update.
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_3.jpg"/>
+<img src="doc/images/z2m_tuya_update_3.jpg"/>
 
 If the result is not as described, it means you did something wrong (did not put the file where it should be, did not reboot z2m) or your thermostat signature is not in the list of supported devices.
 
@@ -117,7 +117,7 @@ If the result is not as described, it means you did something wrong (did not put
 
 Then wait for it to finish. After that we see our thermostat in OTA with the old name but with the new` Firmware build date` and` Firmware version .`
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_4.jpg"/>
+<img src="doc/images/z2m_tuya_update_4.jpg"/>
 
 This is what the log looks like on the first startup after upgrading from Tuya to custom firmware.
 
@@ -135,34 +135,17 @@ Tuya signature found: "edl8pz1k".
 Use modelId: Tuya_Thermostat_r02
 ```
 
-Next, go to the `Devices` section and click on our thermostat on the right side with the symbol "i" and confirm. In this way we force the device to go through the interview again.
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_int_1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_int_1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_int_2.jpg"/>
-
-Then click the <img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_recfg.jpg"/> symbol again on the right side. This forces the device to go through the configuration again.
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_recfg_1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_recfg_2.jpg"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/z2m_tuya_update_recfg_3.jpg"/>
+When updating from the original firmware to a custom firmware, the memory area where the device's network address is stored is cleared. Therefore, after the update, simply enable pairing in `zigbee2mqtt`, and the thermostat will automatically connect to the network. All that remains is to force uninstall the old version of the thermostat.
 
 That's it, the thermostat is ready to go.
 
-> [!WARNING]
-> Attention!!! If the thermostat remains with the old name after a successful update and all the above instructions have been followed, remove it from the network, reboot z2m and pair it again. If during the pairing process the thermostat blinks with the network icon but nothing happens, remove power from the thermostat (unplug it from electricity) and re-power it.
-
 In Home Assistant, it looks like this
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/HA_3.jpg"/>
+<img src="doc/images/HA_3.jpg"/>
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/HA_1.jpg"/>
+<img src="doc/images/HA_1.jpg"/>
 
-<img src="https://raw.githubusercontent.com/slacky1965/tuya_thermostat_zrd/refs/heads/main/doc/images/HA_2.jpg"/>
+<img src="doc/images/HA_2.jpg"/>
 
 ## How to write a new firmware version into an already updated thermostat.
 
@@ -299,6 +282,9 @@ Thanks :))))
 	- Fixed a bug with the schedule divider.
 - 1.0.21
 	- Fixed error of enabling programming mode for Model r07 `_TZE204_mpbki2zm`.
+- 1.0.22
+	- The bootloader replacement procedure has been changed. Now, updating from the original firmware to the custom one is a single operation.
+	- Added thermostat with signature `_TZE200_lndsb16m`
 	
 [Top](#Top)
 

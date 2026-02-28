@@ -2,6 +2,7 @@
 
 /* data point for manufacturer id -
  * "7rghpoxo"
+ * _TZE200_lndsb16m
  *
  * id, type, len, divisor, remote_commands_functionCb, local_commands_functionCb
  */
@@ -54,7 +55,11 @@ data_point_st_t *init_datapoint_model8() {
     data_point_model_common[DP_IDX_MIN].id = DP_TYPE8_ID_10;
     data_point_model_common[DP_IDX_MIN].type = DP_VAL;
     data_point_model_common[DP_IDX_MIN].len = 4;
-    data_point_model_common[DP_IDX_MIN].divisor = 10;
+    if (!strcmp(tuya_manuf_names[MANUF_NAME_8][1], signature)) {
+        data_point_model_common[DP_IDX_MIN].divisor = 1;
+    } else {
+        data_point_model_common[DP_IDX_MIN].divisor = 10;
+    }
     data_point_model_common[DP_IDX_MIN].remote_cmd = remote_cmd_min_setpoint_8;
     data_point_model_common[DP_IDX_MIN].local_cmd = local_cmd_min_setpoint_8;
     data_point_model_common[DP_IDX_MIN].arg1 = R08_HEAT_MIN_MIN;
@@ -63,7 +68,11 @@ data_point_st_t *init_datapoint_model8() {
     data_point_model_common[DP_IDX_MAX].id = DP_TYPE8_ID_0F;
     data_point_model_common[DP_IDX_MAX].type = DP_VAL;
     data_point_model_common[DP_IDX_MAX].len = 4;
-    data_point_model_common[DP_IDX_MAX].divisor = 10;
+    if (!strcmp(tuya_manuf_names[MANUF_NAME_8][1], signature)) {
+        data_point_model_common[DP_IDX_MAX].divisor = 1;
+    } else {
+        data_point_model_common[DP_IDX_MAX].divisor = 10;
+    }
     data_point_model_common[DP_IDX_MAX].remote_cmd = remote_cmd_max_setpoint_8;
     data_point_model_common[DP_IDX_MAX].local_cmd = local_cmd_max_setpoint_8;
     data_point_model_common[DP_IDX_MAX].arg1 = R08_HEAT_MAX_MIN;

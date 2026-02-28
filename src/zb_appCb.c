@@ -226,7 +226,7 @@ void zb_bdbCommissioningCb(uint8_t status, void *arg)
     case BDB_COMMISSION_STA_NOT_PERMITTED:
         break;
     case BDB_COMMISSION_STA_REJOIN_FAILURE:
-        zb_rejoinReq(zb_apsChannelMaskGet(), g_bdbAttrs.scanDuration);
+        zb_rejoinReqWithBackOff(zb_apsChannelMaskGet(), g_bdbAttrs.scanDuration);
         break;
     case BDB_COMMISSION_STA_FORMATION_DONE:
 #ifndef ZBHCI_EN

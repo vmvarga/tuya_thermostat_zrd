@@ -16,6 +16,9 @@ const definition = {
                   {manufacturerName: '_TZE200_7rghpoxo'},
                   {manufacturerName: '_TZE204_7rghpoxo'},
                   {manufacturerName: '_TZE204_6a4vxfnv'},
+                  {manufacturerName: '_TZE284_xalsoe3m'},
+                  {manufacturerName: '_TZE204_xalsoe3m'},
+                  {manufacturerName: '_TZE204_8byfmxdv'},
                   {manufacturerName: '_TZE204_szbxmorb'}
                  ],
     zigbeeModel: ['TS0601'],

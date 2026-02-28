@@ -36,6 +36,7 @@ static const char8_t *tuya_manuf_name7[] = {
 
 static const char8_t *tuya_manuf_name8[] = {
                                            "7rghpoxo",
+                                           "lndsb16m",
                                             NULL};
 
 static const char8_t *tuya_manuf_name9[] = {

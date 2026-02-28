@@ -222,21 +222,21 @@ void local_cmd_set_schedule_1(void *args) {
             if (i < 4) {
                 g_zcl_scheduleData.schedule_mon[ii].transTime = *ptr++ * 60;
                 g_zcl_scheduleData.schedule_mon[ii].transTime += *ptr++;
-                g_zcl_scheduleData.schedule_mon[ii].heatSetpoint = *ptr++ / 2 * 100;
+                g_zcl_scheduleData.schedule_mon[ii].heatSetpoint = (*ptr++ * 100) / 2;
 //                printf("mon. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_mon[ii].transTime,
 //                        g_zcl_scheduleData.schedule_mon[ii].heatSetpoint);
                 i++;
             } else if (i < 8) {
                 g_zcl_scheduleData.schedule_sat[ii].transTime = *ptr++ * 60;
                 g_zcl_scheduleData.schedule_sat[ii].transTime += *ptr++;
-                g_zcl_scheduleData.schedule_sat[ii].heatSetpoint = *ptr++ / 2 * 100;
+                g_zcl_scheduleData.schedule_sat[ii].heatSetpoint = (*ptr++ * 100) / 2;
 //                printf("sat. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_sat[ii].transTime,
 //                        g_zcl_scheduleData.schedule_sat[ii].heatSetpoint);
                 i++;
             } else {
                 g_zcl_scheduleData.schedule_sun[ii].transTime = *ptr++ * 60;
                 g_zcl_scheduleData.schedule_sun[ii].transTime += *ptr++;
-                g_zcl_scheduleData.schedule_sun[ii].heatSetpoint = *ptr++ / 2 * 100;
+                g_zcl_scheduleData.schedule_sun[ii].heatSetpoint = (*ptr++ * 100) / 2;
 //                printf("sun. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_sun[ii].transTime,
 //                        g_zcl_scheduleData.schedule_sun[ii].heatSetpoint);
                 i++;
@@ -345,7 +345,7 @@ void remote_cmd_set_schedule_1(void *args) {
             out_pkt->pkt_len++;
             *pstrd++ = heat_mode[ii].transTime%60;
             out_pkt->pkt_len++;
-            *pstrd++ = heat_mode[ii].heatSetpoint/100*2;
+            *pstrd++ = (heat_mode[ii].heatSetpoint*2)/100;
             out_pkt->pkt_len++;
         }
     }

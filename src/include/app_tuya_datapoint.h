@@ -216,6 +216,7 @@ typedef enum {
 
 /* data point for manufacturer id -
  * "7rghpoxo"
+ * "_TZE200_lndsb16m"
  *
  * type8 (model8)
 */
