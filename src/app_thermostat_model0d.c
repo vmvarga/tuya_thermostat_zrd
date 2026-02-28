@@ -136,17 +136,10 @@ data_point_st_t* init_datapoint_model0D() {
     data_point_model_common[DP_IDX_LED_INDICATOR].remote_cmd = remote_cmd_led_indicator_0D;
     data_point_model_common[DP_IDX_LED_INDICATOR].local_cmd = local_cmd_led_indicator_0D;
 
-    // data_point_model_common[DP_IDX_SCHEDULE].id = DP_TYPE0D_ID_66; // TODO:
-    // data_point_model_common[DP_IDX_SCHEDULE].type = DP_RAW;
-    // data_point_model_common[DP_IDX_SCHEDULE].len = 0x30;
-    // data_point_model_common[DP_IDX_SCHEDULE].divisor = 1;
-    // data_point_model_common[DP_IDX_SCHEDULE].remote_cmd = remote_cmd_set_schedule_0D;
-    // data_point_model_common[DP_IDX_SCHEDULE].local_cmd = local_cmd_set_schedule_0D;
-
     data_point_model_common[DP_IDX_FROST_PROTECT].id = DP_TYPE0D_ID_70;
     data_point_model_common[DP_IDX_FROST_PROTECT].type = DP_VAL;
     data_point_model_common[DP_IDX_FROST_PROTECT].len = 4;
-    data_point_model_common[DP_IDX_FROST_PROTECT].divisor = 1;
+    data_point_model_common[DP_IDX_FROST_PROTECT].divisor = 10;
     data_point_model_common[DP_IDX_FROST_PROTECT].remote_cmd = remote_cmd_frost_protect_0C;
     data_point_model_common[DP_IDX_FROST_PROTECT].local_cmd = local_cmd_frost_protect_0C;
     data_point_model_common[DP_IDX_FROST_PROTECT].arg1 = R0D_FROST_PROTECT_MIN;
@@ -155,7 +148,7 @@ data_point_st_t* init_datapoint_model0D() {
     data_point_model_common[DP_IDX_HEAT_PROTECT].id = DP_TYPE0D_ID_6F;
     data_point_model_common[DP_IDX_HEAT_PROTECT].type = DP_VAL;
     data_point_model_common[DP_IDX_HEAT_PROTECT].len = 4;
-    data_point_model_common[DP_IDX_HEAT_PROTECT].divisor = 1;
+    data_point_model_common[DP_IDX_HEAT_PROTECT].divisor = 10;
     data_point_model_common[DP_IDX_HEAT_PROTECT].remote_cmd = remote_cmd_heat_protect_0D;
     data_point_model_common[DP_IDX_HEAT_PROTECT].local_cmd = local_cmd_heat_protect_0D;
     data_point_model_common[DP_IDX_HEAT_PROTECT].arg1 = R0D_HEAT_PROTECT_MIN;
@@ -175,6 +168,51 @@ data_point_st_t* init_datapoint_model0D() {
     data_point_model_common[DP_IDX_SETTINGS_RESET].len = 1;
     data_point_model_common[DP_IDX_SETTINGS_RESET].remote_cmd = remote_cmd_setting_reset_0D;
     data_point_model_common[DP_IDX_SETTINGS_RESET].local_cmd = local_cmd_setting_reset_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE].id = DP_TYPE0D_ID_00;
+    data_point_model_common[DP_IDX_SCHEDULE].remote_cmd = remote_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_MON].id = DP_TYPE0D_ID_66;
+    data_point_model_common[DP_IDX_SCHEDULE_MON].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_MON].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_MON].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_MON].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_TUE].id = DP_TYPE0D_ID_67;
+    data_point_model_common[DP_IDX_SCHEDULE_TUE].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_TUE].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_TUE].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_TUE].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_WED].id = DP_TYPE0D_ID_68;
+    data_point_model_common[DP_IDX_SCHEDULE_WED].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_WED].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_WED].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_WED].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_THU].id = DP_TYPE0D_ID_69;
+    data_point_model_common[DP_IDX_SCHEDULE_THU].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_THU].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_THU].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_THU].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_FRI].id = DP_TYPE0D_ID_6A;
+    data_point_model_common[DP_IDX_SCHEDULE_FRI].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_FRI].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_FRI].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_FRI].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_SAT].id = DP_TYPE0D_ID_6B;
+    data_point_model_common[DP_IDX_SCHEDULE_SAT].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_SAT].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_SAT].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_SAT].local_cmd = local_cmd_set_schedule_0D;
+
+    data_point_model_common[DP_IDX_SCHEDULE_SUN].id = DP_TYPE0D_ID_6C;
+    data_point_model_common[DP_IDX_SCHEDULE_SUN].type = DP_RAW;
+    data_point_model_common[DP_IDX_SCHEDULE_SUN].len = 0x11;
+    data_point_model_common[DP_IDX_SCHEDULE_SUN].divisor = 10;
+    data_point_model_common[DP_IDX_SCHEDULE_SUN].local_cmd = local_cmd_set_schedule_0D;
 
     return data_point_model_common;
 }
@@ -267,7 +305,7 @@ void remote_cmd_level_0D(void* args) {
 
     if(*level < 0 || *level >= BRIGHTNESS_LEVELS) return;
     uint8_t level_id = *level;
-    *level = brightness_levels[*level];
+    *level = brightness_levels[level_id];
 
 #if UART_PRINTF_MODE && DEBUG_CMD
     printf("Brightness remote: %d -> %d\r\n", level_id, *level);
@@ -451,179 +489,3 @@ void local_cmd_led_indicator_0D(void* args) {
 
     thermostat_settings_save();
 }
-
-// static void get_schedule(void* args) {
-//     if(!zb_isDeviceJoinedNwk()) return;
-
-//     args_get_schedule_t* args_get_schedule = (args_get_schedule_t*)args;
-
-//     epInfo_t dstEpInfo;
-//     TL_SETSTRUCTCONTENT(dstEpInfo, 0);
-
-//     dstEpInfo.profileId = HA_PROFILE_ID;
-// #if FIND_AND_BIND_SUPPORT
-//     dstEpInfo.dstAddrMode = APS_DSTADDR_EP_NOTPRESETNT;
-// #else
-//     dstEpInfo.dstAddrMode = APS_SHORT_DSTADDR_WITHEP;
-//     dstEpInfo.dstEp = APP_ENDPOINT1;
-//     dstEpInfo.dstAddr.shortAddr = 0x0;
-// #endif
-
-//     zcl_thermostat_setWeeklyScheduleCmd_t cmd;
-//     heatMode_t* heat_mode;
-
-//     cmd.dayOfWeekForSequence = 0;
-
-//     if(args_get_schedule->day & DAY_MON) {
-//         // mon
-//         heat_mode = g_zcl_scheduleData.schedule_mon;
-//         cmd.dayOfWeekForSequence = DAY_MON;
-//     } else if(args_get_schedule->day & DAY_SAT) {
-//         // sat
-//         heat_mode = g_zcl_scheduleData.schedule_sat;
-//         cmd.dayOfWeekForSequence = DAY_SAT;
-//     } else if(args_get_schedule->day & DAY_SUN) {
-//         // sun
-//         heat_mode = g_zcl_scheduleData.schedule_sun;
-//         cmd.dayOfWeekForSequence = DAY_SUN;
-//     } else {
-//         return;
-//     }
-
-//     cmd.numOfTransForSequence = 4;
-//     cmd.sequenceMode.pHeatMode = heat_mode;
-//     cmd.modeForSequence = HEAT_SERPOINT_FIELD_PRESENT;
-
-//     //        for (uint8_t i = 0; i < cmd.numOfTransForSequence; i++) {
-//     //            printf("i: %d, time: %d, temp: %d\r\n", i, cmd.sequenceMode.pHeatMode[i].transTime, cmd.sequenceMode.pHeatMode[i].heatSetpoint);
-//     //        }
-
-//     if(args_get_schedule->rsp) {
-//         zcl_thermostat_getWeeklyScheduleRspCmdSend(
-//             APP_ENDPOINT1, &dstEpInfo, 0, args_get_schedule->seqNum, &cmd);
-//     } else {
-//         zcl_thermostat_setWeeklyScheduleCmdSend(APP_ENDPOINT1, &dstEpInfo, 0, &cmd);
-//     }
-// }
-
-// /*
-//  *
-//  *  Funstions for local commands. MCU -> ZT3L -> Zegbee
-//  */
-
-// void local_cmd_set_schedule_0D(void* args) {
-//     data_point_t* data_point = (data_point_t*)args;
-
-//     uint8_t *ptr = data_point->data, lo, hi;
-//     uint16_t temp;
-
-//     for(uint8_t i = 0; i < 4; i++) {
-//         g_zcl_scheduleData.schedule_mon[i].transTime = *ptr++ * 60;
-//         g_zcl_scheduleData.schedule_mon[i].transTime += *ptr++;
-//         hi = *ptr++;
-//         lo = *ptr++;
-//         temp = BUILD_U16(lo, hi) * 100;
-//         g_zcl_scheduleData.schedule_mon[i].heatSetpoint = temp;
-//         //                printf("mon. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_mon[i].transTime,
-//         //                        g_zcl_scheduleData.schedule_mon[i].heatSetpoint);
-//     }
-
-//     for(uint8_t i = 0; i < 4; i++) {
-//         g_zcl_scheduleData.schedule_sat[i].transTime = *ptr++ * 60;
-//         g_zcl_scheduleData.schedule_sat[i].transTime += *ptr++;
-//         hi = *ptr++;
-//         lo = *ptr++;
-//         temp = BUILD_U16(lo, hi) * 100;
-//         g_zcl_scheduleData.schedule_sat[i].heatSetpoint = temp;
-//         //                printf("sat. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_sat[i].transTime,
-//         //                        g_zcl_scheduleData.schedule_sat[i].heatSetpoint);
-//     }
-
-//     for(uint8_t i = 0; i < 4; i++) {
-//         g_zcl_scheduleData.schedule_sun[i].transTime = *ptr++ * 60;
-//         g_zcl_scheduleData.schedule_sun[i].transTime += *ptr++;
-//         hi = *ptr++;
-//         lo = *ptr++;
-//         temp = BUILD_U16(lo, hi) * 100;
-//         g_zcl_scheduleData.schedule_sun[i].heatSetpoint = temp;
-//         //        printf("sun. i: %d, time: %d, temp: %d\r\n", i, g_zcl_scheduleData.schedule_sun[i].transTime,
-//         //                g_zcl_scheduleData.schedule_sun[i].heatSetpoint);
-//     }
-
-//     thermostat_settings_save();
-
-//     args_get_schedule_mon.day = DAY_MON;
-//     args_get_schedule_mon.rsp = false;
-//     TL_SCHEDULE_TASK(get_schedule, &args_get_schedule_mon);
-
-//     args_get_schedule_sat.day = DAY_SAT;
-//     args_get_schedule_sat.rsp = false;
-//     TL_SCHEDULE_TASK(get_schedule, &args_get_schedule_sat);
-
-//     args_get_schedule_sun.day = DAY_SUN;
-//     args_get_schedule_sun.rsp = false;
-//     TL_SCHEDULE_TASK(get_schedule, &args_get_schedule_sun);
-// }
-
-// /*
-//  *
-//  *  Functions for remote commands. Zegbee -> ZT3L -> MCU
-//  *
-//  */
-
-// void remote_cmd_set_schedule_0D(void* args) {
-//     args_get_schedule_any.day = *(uint8_t*)args;
-//     args_get_schedule_any.rsp = false;
-
-//     pkt_tuya_t* out_pkt = (pkt_tuya_t*)remote_cmd_pkt_buff;
-
-//     uint16_t seq_num = get_seq_num();
-//     seq_num++;
-
-//     set_header_pkt(remote_cmd_pkt_buff, sizeof(remote_cmd_pkt_buff), seq_num, COMMAND04);
-
-//     out_pkt->len = reverse16(52);
-//     out_pkt->pkt_len++;
-//     out_pkt->pkt_len++;
-
-//     data_point_t* data_point = (data_point_t*)out_pkt->data;
-//     data_point->dp_id = data_point_model[DP_IDX_SCHEDULE].id;
-//     out_pkt->pkt_len++;
-//     data_point->dp_type = data_point_model[DP_IDX_SCHEDULE].type;
-//     out_pkt->pkt_len++;
-//     data_point->dp_len = (reverse16(data_point_model[DP_IDX_SCHEDULE].len));
-//     out_pkt->pkt_len++;
-//     out_pkt->pkt_len++;
-
-//     uint8_t* pstrd = data_point->data;
-//     heatMode_t* heat_mode;
-
-//     for(uint8_t i = 0; i < 3; i++) {
-//         if(i == 0) {
-//             heat_mode = g_zcl_scheduleData.schedule_mon;
-//         } else if(i == 1) {
-//             heat_mode = g_zcl_scheduleData.schedule_sat;
-//         } else {
-//             heat_mode = g_zcl_scheduleData.schedule_sun;
-//         }
-//         for(uint8_t ii = 0; ii < 4; ii++) {
-//             *pstrd++ = heat_mode[ii].transTime / 60;
-//             out_pkt->pkt_len++;
-//             *pstrd++ = heat_mode[ii].transTime % 60;
-//             out_pkt->pkt_len++;
-//             *pstrd++ = ((heat_mode[ii].heatSetpoint / 100) >> 8) & 0xFF;
-//             out_pkt->pkt_len++;
-//             *pstrd++ = (heat_mode[ii].heatSetpoint / 100) & 0xFF;
-//             out_pkt->pkt_len++;
-//         }
-//     }
-
-//     *pstrd = checksum((uint8_t*)out_pkt, out_pkt->pkt_len++);
-//     add_to_ring_cmd(out_pkt, true);
-
-//     set_seq_num(seq_num);
-
-//     thermostat_settings_save();
-
-//     TL_SCHEDULE_TASK(get_schedule, &args_get_schedule_any);
-// }

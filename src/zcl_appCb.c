@@ -1229,6 +1229,7 @@ status_t app_thermostatCb(zclIncomingAddrInfo_t *pAddrInfo, uint8_t cmdId, void 
                     case MANUF_NAME_7:
                     case MANUF_NAME_9:
                     case MANUF_NAME_0C:
+                    case MANUF_NAME_0D:
                         for (uint8_t i = 0; i < cmd->numOfTransForSequence; i++) {
                             if (i == 4) {
                                 break;
