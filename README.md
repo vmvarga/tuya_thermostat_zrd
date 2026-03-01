@@ -48,11 +48,11 @@ Only the thermostats listed above were checked. If you have a different signatur
 
 Only tested in `zigbee2mqtt`. As of the April 2025 version of `zigbee2mqtt`, no external converter is needed. Support is enabled globally.
 
-## Why. 
+## Why.
 
 To keep it from spamming the network. The first instance (see above) sent 25 packets every 8 seconds.
 
-## Result. 
+## Result.
 
 **About**
 <img src="doc/images/z2m_about.jpg"/>
@@ -63,6 +63,19 @@ To keep it from spamming the network. The first instance (see above) sent 25 pac
 **Reporting**
 <img src="doc/images/z2m_reporting.jpg"/>
 
+## How to compile.
+
+To successfuly compile project under Windows you need installed:
+1. TeLink toolchain (sometimes named Telink IoT Studio)
+2. Git
+3. Python3
+
+**Ensure your %PATH% variable contains paths to git,make,tc32-elf-* executables so they can be invoked by executable name only**
+
+Next, open with you favorite text editor makefile and makefile.bootloader and patch variable named COMPILE_PREFIX.
+They should point to your telink toolchain executables prefix. For example C:/TelinkIoTStudio/opt/tc32/bin/tc32 if installed in C:\TelinkIoTStudio
+
+Next invoke provided in repo win_make.cmd file. It will compile bootloader and next main firmware.
 
 ## How to update.
 
@@ -178,19 +191,19 @@ Thanks :))))
 - 1.0.02
 	- Release. Removed due to an issue with the OTA update.
 - 1.0.03
-	- Fixed an issue with being able to set the heating temperature above the threshold set in maxHeatSetpoint. 
-	- Corrected the converter for thermostat wiring in Home Assistant. 
-	- Added callback functions of remote commands to DataPoints structure. 
+	- Fixed an issue with being able to set the heating temperature above the threshold set in maxHeatSetpoint.
+	- Corrected the converter for thermostat wiring in Home Assistant.
+	- Added callback functions of remote commands to DataPoints structure.
 	- Tested thermostat with signature `_TZE204_aoclfnxz`. Fixed problem with OTA update.
 - 1.0.03a
 	- PreRelease.
 - 1.0.04
-	- Added a thermostat with the signature `_TZE204_edl8pz1k`. 
+	- Added a thermostat with the signature `_TZE204_edl8pz1k`.
 	- Added callback functions of local commands to DataPoints structure.
 	- Added `watchdog`.
-	- The formation of zb_modelId has been changed. 
+	- The formation of zb_modelId has been changed.
 		> When upgrading to custom firmware, thermostats with different signatures, but which are essentially the same device, will now receive the same group name, regardless of signature.
-	- Changed z2m covetors, now it's just two files. 
+	- Changed z2m covetors, now it's just two files.
 		> One for the thermostat with original firmware, one for the thermostat with custom firmware. There is no need to change anything in them.
 - 1.0.05
 	- Added thermostat with signature `_TZE204_tagezcph`
@@ -262,7 +275,7 @@ Thanks :))))
 - 1.0.22
 	- The bootloader replacement procedure has been changed. Now, updating from the original firmware to the custom one is a single operation.
 	- Added thermostat with signature `_TZE200_lndsb16m`
-	
+
 [Top](#Top)
 
 
