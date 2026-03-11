@@ -123,6 +123,48 @@ In Home Assistant, it looks like this
 
 <img src="doc/images/HA_2.jpg"/>
 
+## How to update in ZHA
+
+Put 1141-d3a3-1111114b-tuya_thermostat_zrd.zigbee in /config/zigbee_ota on HA filesystem
+
+Edit configuration.yaml adding:
+
+```
+zha:
+  zigpy_config:
+    ota:
+      extra_providers:
+        - type: advanced
+          path: /config/zigbee_ota
+          warning: >-
+            I understand I can *destroy* my devices by enabling OTA updates
+            from files. Some OTA updates can be mistakenly applied to the
+            wrong device, breaking it. I am consciously using this at my
+            own risk.
+# ---------------------------------------------------------------------------
+# Optional: enable debug logging to monitor OTA progress
+# ---------------------------------------------------------------------------
+#logger:
+#  default: info
+#  logs:
+#    homeassistant.components.zha: debug
+#    zigpy: debug
+
+
+```
+Goto Settings -> Devices -> ZHA -> Thermo Device
+On Device Info click 3 dots -> Manage Zigbee Device
+Select OTA cluster (0x0019), select commands -> image notify. Select payload type QueryJitter, put queryjitter parameter > 0 (foe example 100)
+Input Manufacturer code: 4417
+Image Type:  54179
+File Version: 270807041 or which one you have, this parameters can be found running tools/tuya.py with zigbee firmware as parameter
+
+Click send, and on configuration update firmware.
+
+After updating Add new device via Zigbee search and remove old one.
+
+<img src="doc/images/heatcool.png"/>
+
 ## How to write a new firmware version into an already updated thermostat.
 
 All updates will be available via z2m as new releases are released; you don't need to do anything specifically for this.
@@ -132,6 +174,20 @@ That's it!
 P.S. Not tested in real work, requires extensive testing.
 
 A more detailed description of the very first thermostat [here](https://habr.com/ru/articles/864740)
+
+## Building
+
+In linux
+```
+apt update
+apt install git make python3
+wget https://shyboy.oss-cn-shenzhen.aliyuncs.com/readonly/tc32_gcc_v2.0.tar.bz2
+sudo tar -xvjf tc32_gcc_v2.0.tar.bz2 -C /opt/
+
+make -f makefile.bootloader
+rm -rf out/proj out/platform
+make
+```
 
 ---
 
